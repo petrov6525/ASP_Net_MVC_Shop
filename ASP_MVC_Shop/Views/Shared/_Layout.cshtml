@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ASP_MVC_Shop.styles.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    
+    <title>InBody.UA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rowdies&display=swap" rel="stylesheet">
+    <style> 
+        @@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap'); 
+    </style>
+</head>
+<body onscroll="Scroll(event)">
+    <div class="navbar">
+        <div class="search">
+            <form name="searchForm">
+                <input class="search-input" type="text">
+            </form>
+            <button class="search-button" type="submit" form="searchForm">
+                <img width="100%" src="/img/search.svg" alt="">
+            </button>
+        </div>
+        <a asp-controller="Home" asp-action="Index" class="logo">
+            <div class="in">In</div>
+            <div class="body-ua">Body.UA</div>
+        </a>
+
+        <div class="log-in">
+            <div class="user">
+                <img src="~/img/account_circle.svg" alt="">
+            </div>
+            <div class="basket">
+                <img src="/img/shopping_cart.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="user-div">
+        <form action="" method="post" class="log-in-form">
+            <label for="email">Login</label>
+            <input id="text" class="input" type="email" name="email" placeholder="User name">
+            <br>
+            <label for="password">Password</label>
+            <input class="input" type="password" id="password" name="password">
+            <br>
+            <button class="form-button" type="submit">Log In</button>
+        </form>
+        <button class="form-button">Registration</button>
+    </div>
+    <div class="basket-div">
+        Your basket is empty
+    </div>
+
+
+
+
+    
+
+    <button id="upButton">
+        <img src="~/img/arrow_up.svg" alt="">
+    </button>
+
+    <button class="menu-button fixed-button">
+        <img src="/img/apps.svg" alt="">
+    </button>
+
+    <div class="menu-div">
+        <div class="button-div">
+            <button class="menu-button">
+                <img src="/img/apps.svg" alt="">
+            </button>
+        </div>
+
+        <div class="categories">
+            <div>
+                <input type="checkbox" name="category" value="mass" id="mass">
+                <label class="category-label" for="mass">Для набора массы</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="category" value="dry" id="dry">
+                <label class="category-label" for="dry">Для сушки тела</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="category" value="endurance" id="endurance">
+                <label class="category-label" for="endurance">Для выносливости</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="category" value="mood" id="mood">
+                <label class="category-label" for="mood">Для хорошего настроения</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="category" value="health" id="health">
+                <label class="category-label" for="health">Для поддержания здоровья</label>
+            </div>
+
+        </div>
+        <div></div>
+    </div>
+
+
+    <div class="hidden">
+        <div class="orange-div">
+        </div>
+        <div class="black-div">
+        </div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
